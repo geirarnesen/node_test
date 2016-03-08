@@ -1,4 +1,4 @@
-var url = (process.env.MONGOLAB_URI || 'mongodb://localhost:27017')+'/mongo_books_oslo_1';
+var url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/mongo_books_oslo_1';
 var MongoClient = require('mongodb').MongoClient;
 var connection = MongoClient.connect(url);
 
