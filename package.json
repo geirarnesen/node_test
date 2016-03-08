@@ -1,0 +1,24 @@
+{
+  "name": "book_inventory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "jshint --exclude=node_modules/** **.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "4.13.4",
+    "mongodb": "^2.1.7"
+  },
+  "devDependencies": {
+    "crunchicorn": "0.0.2",
+    "jshint": "^2.9.1",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
+  }
+}
