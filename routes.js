@@ -3,7 +3,20 @@ module.exports = function(stockRepository) {
     getCount: function (req, res) {
       stockRepository.getCount(req.params.isbn).then(function (result) {
         if (result !== null) {
-          res.status(200).json({count: result});
+/*          res.format({
+            'text/html':function(){
+              return res.send(`Antall: ${result} <br/> <esi:include src="https://kwasniew.github.io/footer.html" />`);
+            },
+            'application/json': function(){
+            res.status(200).json({count: result});
+          }
+          });
+*/
+          if(req.headers["accept"] === "application/json") {
+            res.status(200).json({count: result});
+          } else {
+            return res.send(`Antall: ${result}`);
+          }
         } else {
           res.status(404).json({error: 'No book with ISBN: ' + req.params.isbn});
         }
